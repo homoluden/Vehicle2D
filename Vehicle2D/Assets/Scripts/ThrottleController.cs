@@ -19,20 +19,22 @@ public class ThrottleController : MonoBehaviour
 	void Update () {
         if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
         {
-            // Turning Left
-            LeftWheel.AddRelativeForce(Vector2.up * Force * LeftWheel.mass, ForceMode2D.Force);
-            RightWheel.AddRelativeForce(Vector2.up * Force * RightWheel.mass, ForceMode2D.Force);
+            var force = Vector2.up * Force * LeftWheel.mass;
+            //LeftWheel.AddRelativeForce(, ForceMode2D.Force);
+            //RightWheel.AddRelativeForce(Vector2.up * Force * RightWheel.mass, ForceMode2D.Force);
 
-            _carBody.AddTorque(-RotationBalance * (LeftWheel.mass + RightWheel.mass), ForceMode2D.Force);
+            _carBody.AddForce(force, ForceMode2D.Impulse);
+            //_carBody.AddTorque(-RotationBalance * (LeftWheel.mass + RightWheel.mass), ForceMode2D.Force);
         }
 
         if (Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
         {
-            // Turning Left
-            LeftWheel.AddRelativeForce(Vector2.down * Force * LeftWheel.mass, ForceMode2D.Force);
-            RightWheel.AddRelativeForce(Vector2.down * Force * RightWheel.mass, ForceMode2D.Force);
+            var force = Vector2.down * Force * LeftWheel.mass;
+            //LeftWheel.AddRelativeForce(Vector2.down * Force * LeftWheel.mass, ForceMode2D.Force);
+            //RightWheel.AddRelativeForce(Vector2.down * Force * RightWheel.mass, ForceMode2D.Force);
 
-            _carBody.AddTorque(RotationBalance * (LeftWheel.mass + RightWheel.mass), ForceMode2D.Force);
+            _carBody.AddForce(force, ForceMode2D.Impulse);
+            //_carBody.AddTorque(RotationBalance * (LeftWheel.mass + RightWheel.mass), ForceMode2D.Force);
         }
     }
 }
