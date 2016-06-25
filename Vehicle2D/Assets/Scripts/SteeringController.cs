@@ -59,8 +59,8 @@ public class SteeringController : MonoBehaviour
         angleLeft = TargetAngle - angleLeft;
         angleRight = TargetAngle - angleRight;
         
-        LeftHinge.motor = new JointMotor2D { motorSpeed = angleLeft * 3.0f, maxMotorTorque = LerpClamp(_minForce, SteeringForce, angleLeft / MaxAngle) };
-        RightHinge.motor = new JointMotor2D { motorSpeed = angleRight * 3.0f, maxMotorTorque = LerpClamp(_minForce, SteeringForce, angleRight / MaxAngle) };
+        LeftHinge.motor = new JointMotor2D { motorSpeed = angleLeft * 5.0f, maxMotorTorque = LerpClamp(_minForce, SteeringForce, angleLeft / MaxAngle) };
+        RightHinge.motor = new JointMotor2D { motorSpeed = angleRight * 5.0f, maxMotorTorque = LerpClamp(_minForce, SteeringForce, angleRight / MaxAngle) };
     }
     
     private float LerpClamp(float min, float max, float t)
