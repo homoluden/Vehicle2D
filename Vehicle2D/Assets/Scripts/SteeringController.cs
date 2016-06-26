@@ -2,7 +2,6 @@
 
 public class SteeringController : MonoBehaviour
 {
-    private Rigidbody2D _carBody;
     private float _minForce = 0.0f;
 
     public float SteeringForce = 100.0f;
@@ -15,7 +14,6 @@ public class SteeringController : MonoBehaviour
     
 	void Start ()
 	{
-	    _carBody = GetComponent<Rigidbody2D>();
         _minForce = SteeringForce * 0.05f;
         MaxAngle = Mathf.Abs(MaxAngle);
 	}

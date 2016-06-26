@@ -3,7 +3,6 @@ using System.Collections;
 
 public class ThrottleController : MonoBehaviour
 {
-    private Rigidbody2D _carBody;
 
     public float Force = 5.0f;
     public Rigidbody2D LeftWheel;
@@ -11,7 +10,6 @@ public class ThrottleController : MonoBehaviour
 
     // Use this for initialization
     void Start () {
-        _carBody = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
