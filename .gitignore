@@ -29,3 +29,5 @@ sysinfo.txt
 *.apk
 *.unitypackage
 desktop.ini
+/Vehicle2D/Library/ScriptAssemblies/*.mdb
+/Vehicle2D/Library/ScriptAssemblies/*.dll
